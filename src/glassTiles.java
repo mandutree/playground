@@ -9,7 +9,7 @@ public class glassTiles {
         int correctGuess = 0;
 
         while (true){
-            if (guess.equals(wrongTile)){
+            if (!guess.equals(correctTile)){
                 break;
             }
                 int random = (int)(Math.random() * 2); // Math.random() gives a random value between 0 - 0.99 etc.
