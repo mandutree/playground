@@ -1,10 +1,14 @@
 import java.util.Scanner;
+import java.text.DecimalFormat;
 
 public class interestCalc {
     public static void main(String[] args) {
         Scanner src = new Scanner(System.in);
 
         double total = 0;
+
+        DecimalFormat df = new DecimalFormat("0.00");
+
         int[] brackets = {49_020, 98_040, 151_978, 216_511,};
 
         System.out.print("Enter in the amount of stocks: ");
@@ -20,23 +24,23 @@ public class interestCalc {
 
         if(profit <= brackets[0]) {
             total = profit * 0.85;
-            System.out.println("profit: " + total);
+            System.out.println("profit: " + df.format(total));
         }
         else if(profit <= brackets[1]) {
             total = ((profit - brackets[0]) * 0.795) + 41_667;
-            System.out.println("profit: " + total);
+            System.out.println("profit: " + df.format(total));
         }
         else if(profit <= brackets[2]) {
             total = ((profit - brackets[1]) * 0.74) + 80_637.9;
-            System.out.println("profit: " + total);
+            System.out.println("profit: " + df.format(total));
         }
         else if(profit <= brackets[3]) {
             total = ((profit - brackets[2]) * 0.71) + 118_933.88;
-            System.out.println("profit: " + total);
+            System.out.println("profit: " + df.format(total));
         }
         else {
             total = ((profit - brackets[3]) * 0.67) + 162_170.99;
-            System.out.println("profit: " + total);
+            System.out.println("profit: " + df.format(total));
         }
     }
 }
